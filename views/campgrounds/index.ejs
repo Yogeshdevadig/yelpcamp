@@ -1,0 +1,27 @@
+ <% layout('layout/boylerplate') %>
+ 
+ <h1>All Campgrounds</h1>
+    <a href="/campgrounds/new">New Campground</a>
+     
+        <% for(let tit of campgrounds) { %> 
+           <div class="card mb=">
+               <div class="row">
+                   <div class="col-md-4">
+                       <img class="img-fluid" src="<%=tit.images[0].url %>">
+                   </div>
+                   <div class="col-md-8">
+                       <div class="card-body">
+                           <h5 class="card-title"><%= tit.title %></h5>
+                           <p class="card-text"><%= tit.description %></p>
+                           <p class="card-text">
+                               <small class="text-muted"><%=tit.location%></small>
+
+                           </p>
+                           <a class="btn btn-primary" href = "/campgrounds/<%=tit._id%>">View <%=tit.title%></a>
+                       </div>
+                   </div>
+               </div>
+           </div> 
+        <% } %> 
+     
+ 
